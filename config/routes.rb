@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   get 'sobre', to: 'static_page#sobre'
   get 'contato', to: 'static_page#contato'
+
+  resources :contacts
+  resources :users, only: [:new, :create]
+
   
 end
