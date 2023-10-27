@@ -1,10 +1,10 @@
 module SessionsHelper
 
   def sign_in(user)
-    sessions[:user_id] = user.id
+    session[:user_id] = user.id
   end
   def sign_out
-    sessions.delete(:user_id)
+    session.delete(:user_id)
   end
 
   def current_user
@@ -12,7 +12,7 @@ module SessionsHelper
   end
 
   def user_signed_in?
-    !currente_user.nil?
+    !current_user.nil?
   end
 
 end
